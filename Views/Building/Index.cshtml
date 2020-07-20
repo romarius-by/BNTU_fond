@@ -1,0 +1,54 @@
+﻿@model IQueryable<BNTU_fond.Models.Building>
+
+
+@{
+    ViewBag.Title = "Buildings";
+}
+
+<h2>Buildings list</h2>
+
+<p>
+    @Html.ActionLink("Add building", "Create", null, null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Id
+            </th>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Actions
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td class="d-flex justify-content-around">
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BuildingId }, new { @class = "btn btn-success" })
+                </div>
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BuildingId }, new { @class = "btn btn-danger" })
+                </div>
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Floors", "Index", "Floor", new { id = item.BuildingId }, new { @class = "btn btn-info" })
+                </div>
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

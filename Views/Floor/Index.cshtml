@@ -1,0 +1,51 @@
+﻿@model IQueryable<BNTU_fond.Models.Floor>
+
+
+@{
+    ViewBag.Title = "Floors building №" + ViewBag.BuildingId;
+}
+
+    <h2>Floors building №@ViewBag.BuildingId</h2>
+
+<p>
+    @Html.ActionLink("Add floor", "Create", null, new { id = ViewBag.BuildingId }, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Floor number
+            </th>
+            <th scope="col">
+                Actions
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FloorNum)
+            </td>
+            <td class="d-flex justify-content-around">
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.FloorId }, new { @class = "btn btn-success" })
+                </div>
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.FloorId }, new { @class = "btn btn-danger" })
+                </div>
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Auditories", "Index", "Auditory", new { id = item.FloorId }, new { @class = "btn btn-info" })
+                </div>
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="d-flex justify-content-around">
+    @Html.ActionLink("Back to buildings page", "Index", "Building", null, new { @class = "btn btn-light" })
+</div>

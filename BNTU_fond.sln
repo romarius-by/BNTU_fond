@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BNTU_fond", "BNTU_fond.csproj", "{0E3D28AD-D995-4A9F-9BA7-9154EB81C581}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E3D28AD-D995-4A9F-9BA7-9154EB81C581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3D28AD-D995-4A9F-9BA7-9154EB81C581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3D28AD-D995-4A9F-9BA7-9154EB81C581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3D28AD-D995-4A9F-9BA7-9154EB81C581}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECE567C1-AF23-4E1C-8067-10613BE231B9}
+	EndGlobalSection
+EndGlobal

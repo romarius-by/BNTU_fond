@@ -1,0 +1,32 @@
+﻿@model BNTU_fond.Models.Floor
+@{
+    ViewBag.Title = "Edit floor";
+}
+
+<div class="header">
+    <h2>Edit floor №"@Model.FloorNum"</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="body">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.FloorId)
+        @Html.HiddenFor(model => model.BuildingId)
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FloorNum, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.FloorNum, new { htmlAttributes = new { @class = "form-control", required = "required" }, style = "width: 100%" })
+                @Html.ValidationMessageFor(model => model.FloorNum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <input type="submit" value="Save" class="btn btn-success" />
+            @Html.ActionLink("Back to List", "Index", "Floor", new { id = Model.BuildingId }, new { @class = "btn btn-light" })
+        </div>
+    </div>
+}
+

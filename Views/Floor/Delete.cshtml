@@ -1,0 +1,21 @@
+﻿@model BNTU_fond.Models.Floor
+@{
+    ViewBag.Title = "Delete floor";
+}
+
+<div class="header text-center">
+    <h2>Are you sure you want to delete this floor №"@Model.FloorNum" ?</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="body">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.FloorId)
+
+        <div class="d-flex justify-content-between">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            @Html.ActionLink("Back to List", "Index", "Floor", new { id = Model.BuildingId }, new { @class = "btn btn-light" })
+        </div>
+    </div>
+}

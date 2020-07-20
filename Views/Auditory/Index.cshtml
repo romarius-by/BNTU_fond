@@ -1,0 +1,59 @@
+﻿@model BNTU_fond.Models.ViewModel.AuditoryViewModel
+
+
+@{
+    ViewBag.Title = $"Аuditories on the {Model.FloorNum} floor";
+}
+
+<h2>Аuditories on the @Model.FloorNum floor</h2>
+
+<p>
+    @Html.ActionLink("Add auditory", "Create", null, new { id = Model.FloorId }, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Auditory number
+            </th>
+            <th scope="col">
+                Places
+            </th>
+            <th scope="col">
+                Computers
+            </th>
+            <th scope="col">
+                Actions
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Auditories)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuditoryNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Places)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Computers)
+            </td>
+            <td class="d-flex justify-content-around">
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AuditoryId }, new { @class = "btn btn-success" })
+                </div>
+                <div class="btn-group-vertical">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AuditoryId }, new { @class = "btn btn-danger" })
+                </div>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="d-flex justify-content-around">
+    @Html.ActionLink("Back to floors page", "Index", "Floor", new { id = Model.BuildingId }, new { @class = "btn btn-light" })
+</div>
